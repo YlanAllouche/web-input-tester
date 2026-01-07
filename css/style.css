@@ -1,0 +1,227 @@
+:root {
+  --color-primary: #333;
+  --color-border: #333;
+  --color-bg-light: #f0f0f0;
+  --color-bg-white: white;
+  --color-text-light: #888;
+
+  --color-success: #28a745;
+  --color-success-dark: #155724;
+  --color-success-hover: #218838;
+  --color-success-bg: #d4edda;
+
+  --color-danger: #dc3545;
+  --color-danger-dark: #721c24;
+  --color-danger-bg: #f8d7da;
+
+  --color-warning: #ffc107;
+  --color-info: #007bff;
+
+  --color-dark-bg: #1a1a1a;
+  --color-dark-text: #d4d4d4;
+  --color-dark-subtle: #666;
+  --color-dark-muted: #888;
+  --color-syntax-orange: #ce9178;
+  --color-syntax-green: #b5cea8;
+
+  --color-tab-inactive: #e0e0e0;
+  --color-tab-hover: #d0d0d0;
+  --color-btn-hover: #ddd;
+  --color-btn-disabled: #ccc;
+
+  --border-width: 2px;
+  --border-style: solid;
+  --border: var(--border-width) var(--border-style) var(--color-border);
+
+  --font-mono: "Courier New", monospace;
+  --font-size-sm: 11px;
+  --font-size-base: 14px;
+  --font-size-lg: 24px;
+  --font-size-code: 13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--color-bg-light);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--color-bg-white);
+  border: var(--border);
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: var(--font-size-base);
+  border: var(--border);
+  background-color: var(--color-bg-white);
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--color-btn-hover);
+}
+
+button:disabled {
+  background-color: var(--color-btn-disabled);
+  color: var(--color-dark-subtle);
+  cursor: not-allowed;
+}
+
+.btn-green {
+  background-color: var(--color-success);
+  color: var(--color-bg-white);
+  border-color: var(--color-success-dark);
+}
+
+.btn-green:hover {
+  background-color: var(--color-success-hover);
+}
+
+.clear-btn {
+  margin-left: auto;
+}
+
+.status {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: var(--border);
+  font-weight: bold;
+  font-size: var(--font-size-base);
+}
+
+.status.connected {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-dark);
+  color: var(--color-success-dark);
+}
+
+.status.disconnected {
+  background-color: var(--color-danger-bg);
+  border-color: var(--color-danger-dark);
+  color: var(--color-danger-dark);
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: var(--border);
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: var(--border);
+  border-bottom: none;
+  background-color: var(--color-tab-inactive);
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: var(--font-size-base);
+  margin-right: -2px;
+}
+
+.tab-button.active {
+  background-color: var(--color-bg-white);
+  border-bottom: var(--border-width) var(--border-style) var(--color-bg-white);
+}
+
+.tab-button:hover {
+  background-color: var(--color-tab-hover);
+}
+
+.tab-content {
+  display: none;
+  border: var(--border);
+  border-top: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.log-container {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  padding: 15px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
+  height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.log-entry {
+  margin: 5px 0;
+  padding: 5px;
+  border-left: 3px solid var(--color-info);
+  padding-left: 10px;
+}
+
+.log-entry.hid {
+  border-left-color: var(--color-danger);
+}
+
+.log-entry.gamepad {
+  border-left-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.log-entry.keyboard {
+  border-left-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.timestamp {
+  color: var(--color-dark-muted);
+  font-size: var(--font-size-sm);
+}
+
+.device-info {
+  background-color: var(--color-bg-light);
+  border: var(--border);
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: var(--font-size-base);
+}
+
+.data-hex {
+  color: var(--color-syntax-orange);
+  font-family: monospace;
+}
+
+.data-dec {
+  color: var(--color-syntax-green);
+  font-family: monospace;
+}
+
+.empty-state {
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 40px 20px;
+}

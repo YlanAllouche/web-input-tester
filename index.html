@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USB Remote Control Tester</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNhYmxlLWljb24gbHVjaWRlLWNhYmxlIj48cGF0aCBkPSJNMTcgMTlhMSAxIDAgMCAxLTEtMXYtMmEyIDIgMCAwIDEgMi0yaDJhMiAyIDAgMCAxIDIgMnYyYTEgMSAwIDAgMS0xIDF6Ii8+PHBhdGggZD0iTTE3IDIxdi0yIi8+PHBhdGggZD0iTTE5IDE0VjYuNWExIDEgMCAwIDAtNyAwdjExYTEgMSAwIDAgMS03IDBWMTAiLz48cGF0aCBkPSJNMjEgMjF2LTIiLz48cGF0aCBkPSJNMyA1VjMiLz48cGF0aCBkPSJNNCAxMGEyIDIgMCAwIDEtMi0yVjZhMSAxIDAgMCAxIDEtMWg0YTEgMSAwIDAgMSAxIDF2MmEyIDIgMCAwIDEtMiAyeiIvPjxwYXRoIGQ9Ik03IDVWMyIvPjwvc3ZnPg=="
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>USB Remote Control Input Tester</h1>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="hid">HID Input</button>
+        <button class="tab-button" data-tab="gamepad">Gamepad Input</button>
+        <button class="tab-button" data-tab="keyboard">Keyboard Input</button>
+      </div>
+
+      <div id="hid-tab" class="tab-content active">
+        <div id="status" class="status disconnected" style="margin: 10px 0">
+          No HID device connected
+        </div>
+        <div id="deviceInfo" style="margin: 10px 0"></div>
+        <div style="padding: 10px; margin-bottom: 10px">
+          <button id="connectHID" class="btn-green">Connect HID Device</button>
+        </div>
+        <div id="hid-log" class="log-container">
+          <div class="empty-state">Waiting for HID input...</div>
+        </div>
+        <div style="padding: 10px; text-align: right">
+          <button class="clear-btn" data-tab="hid">Clear HID Log</button>
+        </div>
+      </div>
+
+      <div id="gamepad-tab" class="tab-content">
+        <div id="gamepad-log" class="log-container">
+          <div class="empty-state">Waiting for gamepad input...</div>
+        </div>
+        <div style="padding: 10px; text-align: right">
+          <button class="clear-btn" data-tab="gamepad">
+            Clear Gamepad Log
+          </button>
+        </div>
+      </div>
+
+      <div id="keyboard-tab" class="tab-content">
+        <div id="keyboard-log" class="log-container">
+          <div class="empty-state">Waiting for keyboard input...</div>
+        </div>
+        <div style="padding: 10px; text-align: right">
+          <button class="clear-btn" data-tab="keyboard">
+            Clear Keyboard Log
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
